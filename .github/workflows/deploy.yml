@@ -30,15 +30,10 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --prefer-offline --no-audit
 
       - name: Build
         run: npm run build
-
-      - name: Debug Info
-        run: |
-          echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
-          ls -R dist
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
