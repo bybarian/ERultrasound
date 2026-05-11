@@ -57,7 +57,7 @@ const CathayLogo = () => {
 };
 
 // Helper Wrapper for Editable Illustrations
-const IllustrationWrapper = ({ path, type, label }: { path?: string; type: 'in' | 'off' | 'cvc' | 'supra' | 'peng'; label: string }) => {
+const IllustrationWrapper = ({ path, type, label }: { path?: string; type: 'in' | 'off' | 'cvc' | 'supra' | 'peng' | 'fascia'; label: string }) => {
   const [combinedExists, setCombinedExists] = useState(false);
   const [inExists, setInExists] = useState(false);
   const [offExists, setOffExists] = useState(false);
@@ -98,6 +98,7 @@ const IllustrationWrapper = ({ path, type, label }: { path?: string; type: 'in' 
     case 'cvc':
     case 'supra':
     case 'peng':
+    case 'fascia':
       return (
         <div className="flex flex-col items-center justify-center text-slate-300 p-8 text-center bg-[#F8FAFC]">
           <Layers size={48} className="opacity-10 mb-4" />
@@ -624,6 +625,120 @@ export default function App() {
                                 pmid="34196965"
                               />
                            </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Fascia Iliaca Block */}
+              <div className="space-y-8 pt-16 border-t border-slate-200">
+                <div className="border-l-8 border-orange-600 pl-6 space-y-2">
+                  <h3 className="text-5xl font-black tracking-tight text-slate-900">
+                    Fascia Iliaca Compartment Block (FICB)
+                  </h3>
+                  <p className="text-xl font-medium text-slate-400 italic">Supra-inguinal approach for volume-dependent blocks</p>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                  <div className="lg:col-span-12 space-y-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                      <div className="space-y-12">
+                        {/* 1. Anatomy */}
+                        <div className="space-y-4">
+                          <h4 className="inline-flex items-center gap-2 px-4 py-2 bg-orange-50 text-orange-700 rounded-full text-base font-black uppercase tracking-widest">
+                            <Layers size={20} /> 01. Anatomy
+                          </h4>
+                          <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+                            <p className="text-base text-slate-600 leading-relaxed">
+                              FICB targets the <span className="font-bold text-slate-900">potential space</span> deep to the fascia iliaca and superficial to the <span className="font-bold text-slate-900">iliacus muscle</span>. This compartment contains the Femoral (FN), Lateral Femoral Cutaneous (LFCN), and sometimes the Obturator nerve (ON).
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                              <AnatomyLabel label="Fascia Lata" color="bg-slate-100 text-slate-600" />
+                              <AnatomyLabel label="Fascia Iliaca" color="bg-orange-100 text-orange-700" />
+                              <AnatomyLabel label="Iliacus M." color="bg-slate-100 text-slate-700" />
+                              <AnatomyLabel label="Femoral Nerve" color="bg-yellow-100 text-yellow-700" />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* 2. Indication */}
+                        <div className="space-y-4">
+                          <h4 className="inline-flex items-center gap-2 px-4 py-2 bg-orange-50 text-orange-700 rounded-full text-base font-black uppercase tracking-widest">
+                            <Target size={20} /> 02. Indication
+                          </h4>
+                          <div className="space-y-3">
+                            <p className="text-xl text-slate-600 leading-relaxed font-medium">
+                              Primarily used for providing anesthesia or analgesia to the <span className="font-bold text-slate-900">entire anterior and lateral thigh</span>.
+                            </p>
+                            <ul className="grid grid-cols-2 gap-2 text-sm font-bold text-slate-500 uppercase tracking-tight">
+                              <li className="flex items-center gap-2"><ChevronRight size={14} className="text-orange-500" /> Hip Fractures</li>
+                              <li className="flex items-center gap-2"><ChevronRight size={14} className="text-orange-500" /> Femur Fractures</li>
+                              <li className="flex items-center gap-2"><ChevronRight size={14} className="text-orange-500" /> Kneecap Surgery</li>
+                              <li className="flex items-center gap-2"><ChevronRight size={14} className="text-orange-500" /> Hip Replacement</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="space-y-12">
+                        {/* Visual */}
+                        <div className="aspect-video bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-inner flex items-center justify-center p-4">
+                          <IllustrationWrapper path="fascia-iliaca.png" type="fascia" label="Fascia Iliaca Anatomy" />
+                        </div>
+                        <VideoPlayer 
+                          label="FICB Supra-inguinal Video" 
+                          videoId="T7Mp4t08tT8"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                      <div className="space-y-4">
+                        {/* 3. Procedure */}
+                        <h4 className="inline-flex items-center gap-2 px-4 py-2 bg-orange-50 text-orange-700 rounded-full text-base font-black uppercase tracking-widest">
+                          <ChevronRight size={20} /> 03. Procedure
+                        </h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <SimpleCard 
+                            icon={<Menu size={20} className="text-orange-600" />} 
+                            title="Positioning" 
+                            text="Transducer placed sagittal-oblique, just medial to the ASIS. Identify 'bow-tie' appearance." 
+                          />
+                          <SimpleCard 
+                            icon={<Activity size={20} className="text-orange-600" />} 
+                            title="Local Anesthetic" 
+                            text="High volume (30–40 mL) to ensure spread to all three nerves under the fascia." 
+                          />
+                        </div>
+                      </div>
+
+                      <div className="space-y-6">
+                        {/* 4. Clinical Evidence */}
+                        <h4 className="inline-flex items-center gap-2 px-4 py-2 bg-orange-50 text-orange-700 rounded-full text-base font-black uppercase tracking-widest">
+                          <Activity size={20} /> 04. Clinical Evidence
+                        </h4>
+                        <div className="space-y-6">
+                          <EvidenceChart 
+                            title="Patient Satisfaction Score"
+                            data={[
+                              { label: "FICB Supported Care", value: 91, color: "bg-orange-600" },
+                              { label: "Standard Care (Opioids)", value: 54, color: "bg-slate-400" }
+                            ]}
+                          />
+                          <div className="bg-orange-600/5 p-6 rounded-2xl border border-orange-600/10 space-y-4">
+                             <ul className="space-y-3">
+                                <BenefitItem 
+                                  text="The supra-inguinal approach places local anesthetic directly into the iliac fossa and promotes more cephalad spread (PMID: 21401544)" 
+                                  pmid="21401544"
+                                />
+                                <BenefitItem 
+                                  text="FICB provides effective acute pain control in hip fracture patients and reduces the need for systemic analgesia (PMID: 17413915)" 
+                                  pmid="17413915"
+                                />
+                             </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
