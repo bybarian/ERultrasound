@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  // Using relative base path for maximum compatibility across environments
+  // Use an explicit relative base path
   base: './',
   resolve: {
     alias: {
