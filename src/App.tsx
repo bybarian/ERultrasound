@@ -24,7 +24,7 @@ const CathayLogo = () => {
 
   useEffect(() => {
     const img = new Image();
-    img.src = '/logo.png';
+    img.src = 'logo.png';
     img.onload = () => setLogoExists(true);
     img.onerror = () => setLogoExists(false);
   }, []);
@@ -32,7 +32,7 @@ const CathayLogo = () => {
   if (logoExists) {
     return (
       <div className="p-1 bg-white rounded-lg shadow-sm">
-        <img src="/logo.png" alt="CGH Logo" className="h-10 md:h-12 w-auto object-contain" />
+        <img src="logo.png" alt="CGH Logo" className="h-10 md:h-12 w-auto object-contain" />
       </div>
     );
   }
@@ -73,9 +73,9 @@ const IllustrationWrapper = ({ path, type, label }: { path?: string; type: 'in' 
     };
 
     if (type === 'in' || type === 'off') {
-      checkImage('/in-off-plane.png', setCombinedExists);
-      checkImage('/in-plane.png', setInExists);
-      checkImage('/off-plane.png', setOffExists);
+      checkImage('in-off-plane.png', setCombinedExists);
+      checkImage('in-plane.png', setInExists);
+      checkImage('off-plane.png', setOffExists);
     } else if (path) {
       checkImage(path, setPathExists);
     }
@@ -84,7 +84,7 @@ const IllustrationWrapper = ({ path, type, label }: { path?: string; type: 'in' 
   if (combinedExists && (type === 'in' || type === 'off')) {
     return (
       <div className="w-full bg-slate-50 border-b border-slate-200">
-        <img src="/in-off-plane.png" alt="In-plane and Off-plane" className="w-full h-auto object-contain p-4" />
+        <img src="in-off-plane.png" alt="In-plane and Off-plane" className="w-full h-auto object-contain p-4" />
       </div>
     );
   }
@@ -106,9 +106,9 @@ const IllustrationWrapper = ({ path, type, label }: { path?: string; type: 'in' 
         </div>
       );
     case 'in':
-      return inExists ? <img src="/in-plane.png" alt="In-plane" className="w-full aspect-square object-contain p-4" /> : <BasicIllustration type="in" />;
+      return inExists ? <img src="in-plane.png" alt="In-plane" className="w-full aspect-square object-contain p-4" /> : <BasicIllustration type="in" />;
     case 'off':
-      return offExists ? <img src="/off-plane.png" alt="Off-plane" className="w-full aspect-square object-contain p-4" /> : <BasicIllustration type="off" />;
+      return offExists ? <img src="off-plane.png" alt="Off-plane" className="w-full aspect-square object-contain p-4" /> : <BasicIllustration type="off" />;
     default:
       return null;
   }
@@ -118,7 +118,7 @@ const HeelToeWrapper = () => {
     const [exists, setExists] = useState(false);
     useEffect(() => {
       const img = new Image();
-      img.src = '/heel-toe.png';
+      img.src = 'heel-toe.png';
       img.onload = () => setExists(true);
       img.onerror = () => setExists(false);
     }, []);
@@ -126,7 +126,7 @@ const HeelToeWrapper = () => {
     if (exists) {
       return (
         <div className="w-full h-full p-6 flex items-center justify-center">
-          <img src="/heel-toe.png" alt="Heel toe maneuver" className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-700" />
+          <img src="heel-toe.png" alt="Heel toe maneuver" className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-700" />
         </div>
       );
     }
@@ -397,7 +397,7 @@ export default function App() {
 
                     <div className="bg-slate-100 flex flex-col items-center justify-center p-6 gap-6 min-h-[400px]">
                       <div className="w-full h-full rounded-2xl overflow-hidden shadow-lg border-4 border-white bg-white">
-                        <IllustrationWrapper path="/cvc-anatomy.png" type="cvc" label="CVC Anatomy" />
+                        <IllustrationWrapper path="cvc-anatomy.png" type="cvc" label="CVC Anatomy" />
                       </div>
                       <VideoPlayer 
                         label="CVC Procedural Video" 
@@ -510,7 +510,7 @@ export default function App() {
 
                   <div className="lg:col-span-5 space-y-6">
                     <div className="aspect-square bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-inner flex items-center justify-center p-4">
-                        <IllustrationWrapper path="/supra-anatomy.png" type="supra" label="Supraclavicular Anatomy" />
+                        <IllustrationWrapper path="supra-anatomy.png" type="supra" label="Supraclavicular Anatomy" />
                     </div>
                     <VideoPlayer 
                       label="Supraclavicular Block Video" 
@@ -568,7 +568,7 @@ export default function App() {
                       <div className="space-y-12">
                          {/* Visual */}
                         <div className="aspect-video bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-inner flex items-center justify-center p-4">
-                            <IllustrationWrapper path="/peng-anatomy.png" type="peng" label="PENG Anatomy" />
+                            <IllustrationWrapper path="peng-anatomy.png" type="peng" label="PENG Anatomy" />
                         </div>
                         <VideoPlayer 
                           label="PENG Procedural Video" 
