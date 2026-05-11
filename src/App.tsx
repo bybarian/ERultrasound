@@ -185,10 +185,10 @@ export default function App() {
                 <CathayLogo />
               </div>
               <div>
-                <h1 className="text-xl md:text-2xl font-bold tracking-tight leading-none uppercase">
-                  Cathay <span className="text-white">General</span> Hospital
+                <h1 className="text-xl md:text-2xl font-semibold tracking-tight leading-none text-slate-100">
+                  Cathay General Hospital
                 </h1>
-                <p className="text-[10px] md:text-xs font-semibold uppercase tracking-[0.4em] text-white/70 mt-1.5 transition-all">
+                <p className="text-[10px] md:text-xs font-medium uppercase tracking-[0.4em] text-white/60 mt-1.5">
                   Emergency Medicine <span className="mx-2 opacity-30">|</span> Ultrasound Portal
                 </p>
               </div>
@@ -637,10 +637,13 @@ export default function App() {
 
       {/* Footer */}
       <footer className="mt-20 py-16 bg-slate-900 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-6">
-          <div className="h-px w-12 bg-slate-700/50" />
-          <p className="text-[10px] md:text-xs font-semibold uppercase tracking-[0.4em] text-slate-500 text-center leading-relaxed max-w-xl">
-            &copy; 2026 Cathay General Hospital <span className="mx-3 opacity-20">|</span> Digital Technology and Internet Resource Center
+        <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-4">
+          <div className="h-px w-12 bg-slate-700/50 mb-2" />
+          <p className="text-[10px] md:text-xs font-semibold uppercase tracking-[0.4em] text-slate-500 text-center">
+            &copy; 2026 Cathay General Hospital
+          </p>
+          <p className="text-[10px] md:text-xs font-semibold uppercase tracking-[0.4em] text-slate-600 text-center">
+            Digital Technology and Internet Resource Center
           </p>
         </div>
       </footer>
