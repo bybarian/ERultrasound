@@ -24,20 +24,21 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies 📦
-        run: npm install --prefer-offline --no-audit
+        run: npm install
 
       - name: Build 🏗️
         run: npm run build
         env:
-          GITHUB_PAGES: ${{ github.event.repository.name }}
-          NODE_OPTIONS: "--max-old-space-size=4096"
+          VITE_REPO_NAME: ${{ github.event.repository.name }}
 
-      - name: List dist 📂
-        run: ls -R dist
+      - name: Debug Output 📂
+        run: |
+          echo "Base path set for repo: ${{ github.event.repository.name }}"
+          ls -R dist
 
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          force_orphan: true # Cleaner deployment
+          force_orphan: true
