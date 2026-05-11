@@ -34,8 +34,11 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          VITE_REPO_NAME: ${{ github.event.repository.name }}
+
+      - name: Debug Info
+        run: |
+          echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
+          ls -R dist
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

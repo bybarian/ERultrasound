@@ -10,17 +10,17 @@ const __dirname = path.dirname(__filename);
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   
-  // Explicitly get the repo name from the environment variable set in CI
-  const repoName = process.env.VITE_REPO_NAME;
-  
-  // Use the repo name as base if it's not a user/organization page
-  const base = (repoName && !repoName.endsWith('.github.io')) ? `/${repoName}/` : '/';
+  // Get repository name from GITHUB_REPOSITORY (format: owner/repo)
+  const repo = process.env.GITHUB_REPOSITORY?.split('/')[1];
+  // If we're in GitHub Actions, and it's not a user site, use /repo/ as base.
+  // Otherwise default to / for local dev and user sites.
+  const base = (repo && !repo.endsWith('.github.io')) ? `/${repo}/` : '/';
 
   return {
     plugins: [react(), tailwindcss()],
     base: base,
     define: {
-      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
+      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY || ''),
     },
     resolve: {
       alias: {

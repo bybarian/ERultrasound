@@ -101,7 +101,7 @@ const IllustrationWrapper = ({ path, type, label }: { path?: string; type: 'in' 
       return (
         <div className="flex flex-col items-center justify-center text-slate-300 p-8 text-center bg-[#F8FAFC]">
           <Layers size={48} className="opacity-10 mb-4" />
-          <p className="text-xs font-black uppercase tracking-widest text-slate-400">Upload {path?.slice(1)}</p>
+          <p className="text-xs font-black uppercase tracking-widest text-slate-400">Upload {path}</p>
           <p className="text-[10px] opacity-40 mt-1">to replace this placeholder</p>
         </div>
       );
